@@ -9,7 +9,7 @@ import 'package:flutter_edfapay_softpos_sdk_example/helper_methods.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 
-const authCode = "Your SDK Auth Code";
+const authCode = "d2VsYS1zZGt1c2VyQHdlLXBheS5pbzpAdkgxOW11RHJ5Qkg3OEI";
 const logoPath = "assets/images/edfa_logo.png";
 const amountToPay = "01.010";
 
@@ -103,7 +103,7 @@ class _MyAppState extends State<MyApp> {
 
 
   initiate() async{
-    EdfaPayPlugin.initiate(authCode: authCode, environment: Env.DEVELOPMENT).then((value){
+    EdfaPayPlugin.initiate(authCode: authCode, environment: Env.UAT).then((value){
       setState(() {
         _edfaPluginInitiated = value;
       });
@@ -134,7 +134,7 @@ class _MyAppState extends State<MyApp> {
 
     EdfaPayPlugin.pay(
         params,
-        onPaymentProcessComplete: (status, code, result){
+        onPaymentProcessComplete: (status, code, result, complete){
           toast("Card Payment Process Completed");
           print('>>> Payment Process Complete');
         },
