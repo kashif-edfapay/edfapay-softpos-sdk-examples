@@ -9,7 +9,7 @@ import 'package:flutter_edfapay_softpos_sdk_example/helper_methods.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 
-const authCode = "d2VsYS1zZGt1c2VyQHdlLXBheS5pbzpAdkgxOW11RHJ5Qkg3OEI";
+const authCode = "em9oYWliLmthbWJyYW5pLXNka3VzZXJAZWRmYXBheS5jb206aDAyJDI4Z1lyMWZXSVlj";
 const logoPath = "assets/images/edfa_logo.png";
 const amountToPay = "01.010";
 
@@ -103,6 +103,7 @@ class _MyAppState extends State<MyApp> {
 
 
   initiate() async{
+    EdfaPayPlugin.enableLogs(true);
     EdfaPayPlugin.initiate(authCode: authCode, environment: Env.UAT).then((value){
       setState(() {
         _edfaPluginInitiated = value;
