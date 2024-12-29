@@ -84,6 +84,7 @@ EdfaPayPlugin.initiate(
 
 
 ### 3: Setting Theme (Optional)
+Below theme configuration should be called after **SDK initilization**.
 ```dart
 final logo = "base64 of image";
 // final logo = await assetsBase64('path to image asset');
